@@ -47,9 +47,5 @@ terraform destroy
 
 ## What now?
 
-Check out the [Terraform AKS documentation](https://www.terraform.io/docs/providers/azurerm/r/kubernetes_cluster.html) for more details on customising the cluster.
-
-Some more things to look at:
-
-* NAT gateway for outgoing traffic from nodes. See `network_profile.outbound_type` Terraform configuration.
-* Check the security of the cluster. Role based access to the cluster would be a good step to lock down access.
+* [AKS documentation](https://docs.microsoft.com/en-us/azure/aks/) for more information on AKS itself.
+* [Terraform AKS documentation](https://www.terraform.io/docs/providers/azurerm/r/kubernetes_cluster.html) for more details on customising the cluster.
