@@ -1,2 +1,2 @@
-location = "australiaeast"
 name     = "mycluster"
+location = "australiaeast"

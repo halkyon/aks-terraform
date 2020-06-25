@@ -22,8 +22,8 @@ resource "azurerm_virtual_network" "network" {
 resource "azurerm_subnet" "nodes" {
   name                 = "${var.name}-nodes"
   resource_group_name  = azurerm_resource_group.group.name
-  address_prefixes     = [var.nodes_cidr]
   virtual_network_name = azurerm_virtual_network.network.name
+  address_prefixes     = [var.nodes_cidr]
 }
 
 resource "azurerm_kubernetes_cluster" "primary" {
@@ -31,14 +31,9 @@ resource "azurerm_kubernetes_cluster" "primary" {
   resource_group_name = azurerm_resource_group.group.name
   location            = azurerm_resource_group.group.location
   dns_prefix          = var.name
-  linux_profile {
-    admin_username = var.admin_username
-    ssh_key {
-      key_data = file(var.public_ssh_key_path)
-    }
-  }
+  kubernetes_version  = "1.16.9"
   network_profile {
-    network_plugin = "kubenet"
+    network_plugin = "azure"
   }
   default_node_pool {
     name                  = var.name
