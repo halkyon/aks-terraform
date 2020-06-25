@@ -31,7 +31,7 @@ resource "azurerm_kubernetes_cluster" "primary" {
   resource_group_name = azurerm_resource_group.group.name
   location            = azurerm_resource_group.group.location
   dns_prefix          = var.name
-  kubernetes_version  = "1.16.9"
+  kubernetes_version  = var.kubernetes_version
   network_profile {
     network_plugin = "azure"
   }

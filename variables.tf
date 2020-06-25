@@ -9,6 +9,10 @@ variable "nodes_cidr" {
   default = "10.1.0.0/20"
 }
 
+variable "kubernetes_version" {
+  default = "1.16.9"
+}
+
 variable "admin_username" {
   default = "azureuser"
 }
