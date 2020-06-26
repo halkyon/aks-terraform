@@ -18,7 +18,18 @@ Fill out `terraform.tfvars` with the variables you'd like.
 
 Required variables are `location`, and `name`, the Azure location/region, and name you'd like your cluster.
 
-See [an Azure regions list](https://github.com/claranet/terraform-azurerm-regions/blob/master/REGIONS.md) for reference.
+For reference, running `az account list-locations -o table` will get a list of regions to use.
+
+Availability zones can be configured for high availability [if the chosen region supports it](https://docs.microsoft.com/en-us/azure/aks/availability-zones#limitations-and-region-availability). An example `terraform.tfvars`:
+
+```
+name               = "mycluster"
+location           = "westus2"
+availability_zones = ["1", "2", "3"]
+node_count         = 3
+min_count          = 3
+max_count          = 6
+```
 
 ## Provisioning
 

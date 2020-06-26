@@ -38,8 +38,10 @@ resource "azurerm_kubernetes_cluster" "primary" {
   default_node_pool {
     name                  = var.name
     vm_size               = var.vm_size
+    availability_zones    = var.availability_zones
     enable_auto_scaling   = true
     enable_node_public_ip = false
+    max_pods              = var.max_pods_per_node
     os_disk_size_gb       = var.os_disk_size_gb
     node_count            = var.node_count
     min_count             = var.min_count
