@@ -12,7 +12,7 @@ Initialise the Azure CLI if you haven't already:
 az login
 ```
 
-### Setup variables
+## Setup variables
 
 Fill out `terraform.tfvars` with the variables you'd like.
 
@@ -38,13 +38,13 @@ terraform init
 terraform apply
 ```
 
-### Configure kubectl
+## Configure kubectl
 
 ```shell
 az aks get-credentials --resource-group mycluster --name mycluster
 ```
 
-### Test it works
+## Test it works
 
 ```shell
 kubectl get nodes -o wide
