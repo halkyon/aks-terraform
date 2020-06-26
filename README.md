@@ -6,7 +6,7 @@ This repository showcases using Terraform to provision a new network and AKS clu
 
 Ensure that `kubectl`, `az`, and `terraform` are installed first.
 
-### Initialise Azure CLI
+Initialise the Azure CLI if you haven't already:
 
 ```shell
 az login
